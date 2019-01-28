@@ -1,8 +1,8 @@
 import { compose, createStore } from 'redux';
-import rootReducer from '../redux/reducers/reducers';
+import todosApp from '../redux/reducers/reducers';
 
 const store = createStore(
-    rootReducer,
+    todosApp,
     compose(window.devToolsExtension ? window.devToolsExtension() : f => f)
 );
 

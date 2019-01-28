@@ -1,9 +1,28 @@
 .todo__text{
     color: red;
+    flex-grow: 1;
 }
 
 .todo__button{
     color: blue;
     background-color: white;
     border: 1px solid grey;
+    display: inline-block;
+    text-align: center;
+    width: 100px;
+    border-radius: 5px;
+    }
+
+.todo__button:hover{
+    cursor: pointer;
+}
+
+.todo {
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+}
+
+.todo:hover{
+    background-color: #80808080
 }

@@ -1,13 +1,8 @@
-import { combineReducers } from 'redux';
 import { ADD_TODO, DELETE_TODO } from '../actions/actionTypes';
 import _ from 'lodash';
 
 const initialState = {
-    todos: [
-        { id: 1, text: 'todo1' },
-        { id: 2, text: 'todo2' },
-        { id: 3, text: 'todo3' }
-    ]
+    todos: []
 };
 
 function todosApp(state = initialState, action) {
@@ -15,13 +10,14 @@ function todosApp(state = initialState, action) {
 
     switch (action.type) {
         case ADD_TODO:
-            const id = _.get(_.last(todos), 'id') + 1;
+            let id = 1;
+            if (todos && todos.length > 0) id = _.get(_.last(todos), 'id') + 1;
 
             return {
                 todos: [...todos, { id: id, text: action.payload }]
             };
         case DELETE_TODO:
-            const newTodos = _.remove(todos, todo => todo.id !== action.id);
+            const newTodos = _.filter(todos, todo => todo.id !== action.id);
             return {
                 todos: newTodos
             };
@@ -30,7 +26,4 @@ function todosApp(state = initialState, action) {
     }
 }
 
-const rootReducer = combineReducers({
-    todosApp
-});
-export default rootReducer;
+export default todosApp;

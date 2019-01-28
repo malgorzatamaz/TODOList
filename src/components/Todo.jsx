@@ -10,7 +10,7 @@ class Todo extends Component {
     render() {
         const { todo } = this.props;
         return (
-            <div>
+            <div className="todo">
                 <span className="todo__text">{todo.text}</span>
                 <div className="todo__button" onClick={this.deleteTodo}>
                     Delete
