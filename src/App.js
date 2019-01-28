@@ -3,9 +3,6 @@ import AddTodo from './components/AddTodo';
 import TodoList from './components/TodoList';
 import _ from 'lodash';
 
-// dpienczykowski@gmail.com
-// przerobić na reduxa, dodać testy, zrobić brancha
-
 
 class App extends Component {
     state = {
